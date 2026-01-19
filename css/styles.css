@@ -423,7 +423,9 @@ body {
 }
 
 .portfolio-item-container {
-    max-width: 360px;
+    min-width: 100%;
+    padding: 32px 16px;
+    /* max-width: 360px; */
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -695,10 +697,11 @@ body {
     border-radius: 4px;
     /* width: 408px; */
     max-width: 288px;
-    height: 584px;
+    min-height: 584px;
+    width: 100%;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
     background: #fcfcfc;
-    padding: 72px 24px 24px 24px;   72 16 16 16?
+    padding: 72px 16px 16px 16px;  
     position: relative;
     box-sizing: border-box;
     transform: none;
@@ -853,6 +856,7 @@ body {
     color: #8e8f99;
     display: flex;
     align-items: center;
+    flex-wrap: nowrap;
 }
 
 .checkbox {
@@ -885,7 +889,7 @@ body {
 }
 
 .modal-link {
-    line-height: 1.33;
+    /* line-height: 1.33; */
     text-decoration: underline;
     text-decoration-skip-ink: none;
     color: #4d5ae5;
@@ -1033,6 +1037,15 @@ body {
     color: #404bbf;
 }
 
+.mobile-address-link.accent {
+    color: #4d5ae5;
+}
+
+.mobile-address-link.accent:hover,
+.mobile-address-link.accent:focus {
+    color: #404bbf;
+}
+
 .mobile-social-list {
     display: flex;
     flex-direction: row;
@@ -1063,10 +1076,25 @@ body {
 }
 
 .mobile-social-icon {
-    fill: #f4f4fd;
+    fill: #f4f4fd; 
 }
 
 /* @media */
+
+@media screen and (max-width: 767px) {
+    .check-text {
+        flex-wrap: wrap;
+    }
+
+    .modal-link {
+        content: '\A';
+        white-space: pre;
+        display: block;
+        margin-top: 4px;
+        margin-left: 24px;
+    }
+}
+
 
 @media screen and (min-width: 768px) {
     .container {
@@ -1090,7 +1118,7 @@ body {
         display: flex;
         gap: 40px;
     }
-    
+
     .address-list {
         display: flex;
         flex-direction: column;
@@ -1172,7 +1200,6 @@ body {
         align-items: flex-start;
     }
 
-
     .subscribe-form {
         min-width: 100%;
         flex-direction: row;
@@ -1189,6 +1216,10 @@ body {
         padding: 72px 24px 24px 24px;
         min-height: 584px;
         max-width: 408px;
+    }
+
+    .close-btn {
+        right: 24px;
     }
 }
 
